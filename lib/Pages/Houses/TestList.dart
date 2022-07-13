@@ -1,6 +1,7 @@
-import 'dart:html';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
+
+import '../../generated/l10n.dart';
 
 class HomePage2 extends StatefulWidget {
   @override
@@ -14,7 +15,10 @@ class _HomePage2State extends State<HomePage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Советкая 49/1')),
+        appBar: AppBar(
+          title: Text(S.of(context).app_bar_49),
+          titleTextStyle: TextStyle(color: Theme.of(context).primaryColor),
+        ),
         body: Container(
             child: Stack(
           alignment: AlignmentDirectional.bottomEnd,
@@ -41,7 +45,7 @@ class _HomePage2State extends State<HomePage2> {
                   });
                 },
                 child: Icon(Icons.import_export_sharp,
-                    semanticLabel: 'Сверхну-вниз', size: 65)),
+                    semanticLabel: S.of(context).reverse_button, size: 65)),
           ],
         )));
   }
